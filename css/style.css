@@ -1,0 +1,144 @@
+body {
+    background: #a1a1a1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Lucida Sans", sans-serif;
+}
+
+*:focus {
+    outline-color: #a1a1a1;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+button {
+    background: brown;
+    color: white;
+    border: 5px solid brown;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: rgb(121, 30, 30);
+    border-color: rgb(121, 30, 30);
+}
+
+button:active {
+    border-color: rgb(87, 24, 24);
+}
+
+/* table */
+caption {
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    width: 100%;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+td {
+    padding: 10px;
+}
+
+td.id {
+    vertical-align: top;
+    width: 5%;
+}
+
+td.title {
+    vertical-align: top;
+    width: 20%;
+}
+
+td.description {
+    width: 55%;
+}
+
+td.price {
+    text-align: right;
+    vertical-align: bottom;
+    width: 10%;
+}
+
+td.stock {
+    text-align: right;
+    vertical-align: bottom;
+    width: 10%;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+td.update, td.delete {
+    background-color: #a1a1a1;
+    border: none;
+    padding: 0px;
+}
+
+/* form */
+form {
+    background: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+}
+
+label {
+    color: grey;
+    display: block;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid grey;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff5e5e;
+}
+
+div.error {
+    height: 15px;
+    font-size: 10px;
+    color: red;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* footer */
+div.copyright {
+    text-align: center;
+    margin: 20px;
+    color: white;
+}
