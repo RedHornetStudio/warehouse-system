@@ -7,14 +7,39 @@
 
     $errors = ['title' => '', 'description' => '', 'price' => '', 'stock' => '',];
 
+    // check if form is submitted
     if(isset($_POST['title'])) {
-        
+
+        // check for errors
         $title = trim($_POST['title']);
         if(empty($title)) {
             $errors['title'] = 'a title is required';
         } else {
             if(!preg_match("/^[a-zA-Z\s]+$/", $title)) {
                 $errors['title'] = 'invalid title';
+            }
+        }
+
+        $description = trim($_POST['description']);
+        if(empty($description)) {
+            $errors['description'] = 'a description is required';
+        }
+
+        $price = trim($_POST['price']);
+        if(empty($price)) {
+            $errors['price'] = 'a price is required';
+        } else {
+            if(!preg_match("/^([0-9]+){0,1}(\.[0-9]*){0,1}$/", $price)) {
+                $errors['price'] = 'invalid price';
+            }
+        }
+
+        $stock = trim($_POST['stock']);
+        if(empty($stock)) {
+            $errors['stock'] = 'a stock is required';
+        } else {
+            if(!preg_match("/^[0-9]+$/", $stock)) {
+                $errors['stock'] = 'ivalid stock';
             }
         }
 
@@ -26,24 +51,23 @@
             }
         }
 
+        // if no errors, insert into products table
         if(!$isError) {
             $conn = mysqli_connect('localhost', 'redhornet', 'redhornet', 'warehouse');
 
-            if(!$conn) {
-                echo "Connection error: " . mysqli_connect_error();
+            if($conn) {
+                $isError = true;
+
+                $sql = "INSERT INTO products (title, description, price, stock) VALUES ('$title', '$description', '$price', '$stock')";
+
+                if(mysqli_query($conn, $sql)) {
+                    header("Location: index.php");
+                } else {
+                    echo "Query error: " . mysqli_error($conn);
+                }
+
+                mysqli_close($conn);
             }
-
-            $isError = true;
-
-            $sql = "INSERT INTO products (title, description, price, stock) VALUES ('$title', '$description', '$price', '$stock')";
-
-            if(mysqli_query($conn, $sql)) {
-                header("Location: index.php");
-            } else {
-                echo "Query error: " . mysqli_error($conn);
-            }
-
-            mysqli_close($conn);
         }
     }
 
