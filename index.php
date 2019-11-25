@@ -9,10 +9,13 @@
 
         $result = mysqli_query($conn, $sql);
 
-        $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        if($result) {
+            $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-        mysqli_free_result($result);
-
+            mysqli_free_result($result);
+        } else {
+            echo 'Query error: ' . mysqli_error($conn);
+        }
         mysqli_close($conn);
     }
 ?>
