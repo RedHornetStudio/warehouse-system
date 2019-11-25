@@ -54,6 +54,9 @@
                 </tr>
             <?php } ?>
         </table>
+        <form action="update.php" style="display: none;" id="form_update_row" method="POST">
+            <input type="text" name="id" id="input_update_row">
+        </form>
     </section>
     <footer>
         <div class="copyright">Copyright 2019 Red Hornet Studio</div>

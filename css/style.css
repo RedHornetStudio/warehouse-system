@@ -116,6 +116,7 @@ label {
 }
 
 input {
+    background: none;
     border: none;
     border-bottom: 2px solid grey;
     margin-top: 10px;

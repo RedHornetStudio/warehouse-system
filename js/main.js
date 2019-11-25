@@ -34,5 +34,6 @@ function deleteRow(productId) {
 }
 
 function updateRow(productId) {
-    
+    document.getElementById('input_update_row').value = productId;
+    document.getElementById('form_update_row').submit();
 }
