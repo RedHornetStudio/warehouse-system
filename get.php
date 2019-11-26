@@ -1,7 +1,8 @@
 <?php
 
     if(isset($_POST['get'])) {
-        if($_POST['get'] == 'all') {
+        $get = trim($_POST['get']);
+        if($get == 'all') {
             $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
 
             if($conn) {
@@ -22,9 +23,8 @@
                 }
                 mysqli_close($conn);
             }
-        } else if(ctype_digit($_POST['get'])) {
-            $id = $_POST['get'];
-
+        } else if(preg_match("/^[0-9]+$/", $get)) {
+            $id = trim($_POST['get']);
             $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
 
             if($conn) {
@@ -46,7 +46,7 @@
                 mysqli_close($conn);
             }
         } else {
-            echo 'Wrong request';
+            echo 'Query error: ';
         }
     }
 
