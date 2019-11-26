@@ -53,7 +53,7 @@
 
         // if no errors, insert into products table
         if(!$isError) {
-            $conn = mysqli_connect('localhost', 'redhornet', 'redhornet', 'warehouse');
+            $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
 
             if($conn) {
                 $sql = "INSERT INTO products (title, description, price, stock) VALUES ('$title', '$description', '$price', '$stock')";

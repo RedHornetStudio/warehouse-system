@@ -4,7 +4,7 @@
     if(isset($_POST['id'])) {
 
         // delete product from products table
-        $conn = mysqli_connect('localhost', 'redhornet', 'redhornet', 'warehouse');
+        $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
         if($conn) {
             $id_to_delete = mysqli_real_escape_string($conn, $_POST['id']);
             $sql = "DELETE FROM products WHERE id = $id_to_delete";

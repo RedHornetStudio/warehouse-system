@@ -2,7 +2,7 @@
 
     $products = [];
 
-    $conn = mysqli_connect('localhost', 'redhornet', 'redhornet', 'warehouse');
+    $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
 
     if($conn) {
         $sql = 'SELECT * FROM products ORDER BY id DESC';
