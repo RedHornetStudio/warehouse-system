@@ -38,12 +38,9 @@
         if(empty($stock)) {
             $errors['stock'] = 'a stock is required';
         } else {
-            //if(!preg_match("/^[0-9]+$/", $stock)) {
+            if(!preg_match("/^[0-9]+$/", $stock)) {
                 $errors['stock'] = 'ivalid stock';
-                if(preg_match("/^[0-9]+$/", $stock)) {
-                    echo 'aaaaa';
-                }
-            //}
+            }
         }
 
         $isError = false;
