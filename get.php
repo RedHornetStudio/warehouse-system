@@ -1,5 +1,6 @@
 <?php
 
+    header("Access-Control-Allow-Origin: *");
     if(isset($_POST['get'])) {
         $get = trim($_POST['get']);
         if($get == 'all') {
