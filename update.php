@@ -10,7 +10,7 @@
 
     // fill form with old data 
     if(isset($_POST['id'])) {
-        $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
+        $conn = mysqli_connect('localhost', 'id11739129_user', 'warehouse', 'id11739129_warehouse');
 
         if($conn) {
             $id = mysqli_real_escape_string($conn, $_POST['id']);
@@ -76,7 +76,7 @@
 
         // if no errors, update products table
         if(!$isError) {
-            $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
+            $conn = mysqli_connect('localhost', 'id11739129_user', 'warehouse', 'id11739129_warehouse');
 
             if($conn) {
                 $sql = "UPDATE products SET title='$title', description='$description', price='$price', stock='$stock' WHERE id='$id'";

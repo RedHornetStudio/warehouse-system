@@ -3,7 +3,7 @@
     if(isset($_POST['get'])) {
         $get = trim($_POST['get']);
         if($get == 'all') {
-            $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
+            $conn = mysqli_connect('localhost', 'id11739129_user', 'warehouse', 'id11739129_warehouse');
 
             if($conn) {
                 $sql = "SELECT * FROM products";
@@ -25,7 +25,7 @@
             }
         } else if(preg_match("/^[0-9]+$/", $get)) {
             $id = trim($_POST['get']);
-            $conn = mysqli_connect('localhost', 'user', 'user', 'warehouse');
+            $conn = mysqli_connect('localhost', 'id11739129_user', 'warehouse', 'id11739129_warehouse');
 
             if($conn) {
                 $sql = "SELECT * FROM products WHERE id='$id'";
